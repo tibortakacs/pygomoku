@@ -1,0 +1,2 @@
+# pygomoku
+Gomoku in Python
