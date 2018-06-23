@@ -5,6 +5,11 @@
 # - - empty field
 #
 
+cell_x = "x"
+cell_o = "o"
+cell_e = "-"
+cell_X = "X"
+
 rules = [
     (100, 1, "xxxxx"), # Win the game with five
 
@@ -40,5 +45,7 @@ rules = [
     (60, 1, "xx"), # Just put close
     (60, 1, "x-x"),
 
-    (55, 1, "xo") # Just block the enery
+    (55, 1, "xo"), # Just block the enemy
+
+    (0, 1, "x") # Basic step
 ]
