@@ -1,18 +1,22 @@
 # Defines the board class
 class Board:
     def __init__(self, size):
-        self.board = [[0 for x in range(size)] for y in range(size)]
+        self.__board = [[0 for x in range(size)] for y in range(size)]
+        self.__size = size
 
-    def index(self, i):
+    def __index(self, i):
         if i < 0:
-            raise IndexError("Negative index is not allowed")
+            raise IndexError("Negative __index is not allowed")
         return i
 
+    def get_size(self):
+        return self.__size
+
     def get_element(self, x, y):
-        return self.board[self.index(x)][self.index(y)]
+        return self.__board[self.__index(x)][self.__index(y)]
 
     def set_element(self, x, y, value):
-        self.board[self.index(x)][self.index(y)] = value
+        self.__board[self.__index(x)][self.__index(y)] = value
 
     def get_element_array(self, x, y, n, dir):
         if dir == 0:
@@ -40,4 +44,4 @@ class Board:
             dx = 1
             dy = 1
 
-        return [self.board[self.index(x + i * dx)][self.index(y + i * dy)] for i in range(n)]
+        return [self.__board[self.__index(x + i * dx)][self.__index(y + i * dy)] for i in range(n)]

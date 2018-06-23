@@ -2,7 +2,7 @@ import rulematcher.rules.rules as rules
 
 class Matcher:
     def __init__(self, x_val = 1, o_val = 2, e_val = 0):
-        self.vals = {
+        self.__vals = {
             x_val : rules.cell_x,
             o_val : rules.cell_o,
             e_val : rules.cell_e
@@ -11,7 +11,7 @@ class Matcher:
     # Check whether the rule fits on the row or not. If it fits, it returns the index of the currently empty element
     # which has to be transformed to x, otherwise it returns -1.
     def match(self, rule, row):
-        row = [self.vals[v] for v in row]
+        row = [self.__vals[v] for v in row]
 
         if len(rule) != len(row):
             return -1
